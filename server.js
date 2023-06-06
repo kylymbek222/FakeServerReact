@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 
 const server = jsonServer.create();
 const router = jsonServer.router("db.json");
-const userdb = JSON.parse(fs.readFileSync("users.json", "UTF-8"));
 
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
@@ -29,6 +28,8 @@ function verifyToken(token) {
 
 // Check if the user exists in database
 function isAuthenticated({ email, password }) {
+  const userdb = JSON.parse(fs.readFileSync("users.json", "UTF-8"));
+
   return (
     userdb.users.findIndex(
       (user) => user.email === email && user.password === password
@@ -49,7 +50,7 @@ server.post("/auth/register", (req, res) => {
     return;
   }
 
-  fs.readFile("./users.json", (err, data) => {
+  fs.readFile("users.json", (err, data) => {
     if (err) {
       const status = 401;
       const message = err;
@@ -66,7 +67,7 @@ server.post("/auth/register", (req, res) => {
     //Add new user
     data.users.push({ id: last_item_id + 1, email: email, password: password }); //add some data
     var writeData = fs.writeFile(
-      "./users.json",
+      "users.json",
       JSON.stringify(data),
       (err, result) => {
         // WRITE

@@ -9,6 +9,14 @@
     { "id": 7, "email": "nilson4@email.com", "password": "nilson" },
     { "id": 8, "email": "nilson7@email.com", "password": "nilson" },
     { "id": 9, "email": "nilson8@email.com", "password": "nilson" },
-    { "id": 10, "email": "nilsonwewfqf@email.com", "password": "nilson" }
+    { "id": 10, "email": "nilsonwewfqf@email.com", "password": "nilson" },
+    { "id": 11, "email": "nilsonwebggwfqf@email.com", "password": "nilson" },
+    { "id": 12, "email": "nilsonwebggwhfqf@email.com", "password": "nilson" },
+    {
+      "id": 13,
+      "email": "nilsonwebggwnnnnnhfqf@email.com",
+      "password": "nilson"
+    },
+    { "id": 14, "email": "kylymbek@mail.com", "password": "nilson" }
   ]
 }
