@@ -49,7 +49,7 @@ server.post("/auth/register", (req, res) => {
     return;
   }
 
-  fs.readFile("users.json", (err, data) => {
+  fs.readFile("./users.json", (err, data) => {
     if (err) {
       const status = 401;
       const message = err;
@@ -66,7 +66,7 @@ server.post("/auth/register", (req, res) => {
     //Add new user
     data.users.push({ id: last_item_id + 1, email: email, password: password }); //add some data
     var writeData = fs.writeFile(
-      "users.json",
+      "./users.json",
       JSON.stringify(data),
       (err, result) => {
         // WRITE
